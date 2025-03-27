@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+width: 100%;
+height: 100%;
+background-color: black;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 30px;
+flex-direction: column;
+}
+
+header { 
+    color: white;
+    font-size: 40px;
+    margin-top: 15px;
+    margin-right: 500px;
+}
+
+#sira{
+    width: 80vw;
+    margin-top: 200px;
+    animation: float 3s ease-in-out infinite;
+}
+
+h1{
+    color: white;
+    font-size: 40px;
+    font-family: "Lora", serif;
+    font-style: italic;
+}
+
+#name{
+    color: #db2c8c;
+    font-size: 55px;
+}
+
+#va{
+    color: #34ebe8;
+    font-size: 55px;
+
+}
+
+.talk{
+width: 50%;
+background: linear-gradient(to right,#34ebe8,#db2c8c);
+padding: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 30px;
+font-style: bold;
+font-size: 30px;
+border-radius: 30px;
+color: white;
+border: none;
+transition: all 0.5s;
+cursor: pointer;
+}
+
+.talk:hover{
+box-shadow: 2px 2px 20px #34ebe8, 2px 2px 20px #db2c8c;
+letter-spacing: 2px;
+}
+
+.talk i {
+  font-size: 40px;
+  color: white;
+}
+
+@keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-50px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
