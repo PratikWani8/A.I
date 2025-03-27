@@ -13,7 +13,6 @@ function speak(text){
 }
 
 
-
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 const recognition =  new SpeechRecognition();
@@ -67,8 +66,12 @@ function takeCommand(message){
         speak("Opening Facebook")
     }
     else if(message.includes("open tweeter")){
-        window.open("https://tweeter.com", "_blank");
+        window.open("https://twitter.com", "_blank");
         speak("Opening Tweeter")
+    }
+    else if(message.includes("open amazon")){
+        window.open("https://amazon.com", "_blank");
+        speak("Opening Amazon")
     }
  
      // Opening Apps 
@@ -97,8 +100,9 @@ function takeCommand(message){
     // Date and Time 
       
     else if(message.includes('time')) {
-        let time = new Time().toLocaleString(undefined,{hours:"numeric", minutes:"numberic"})
-        speak(time);
+        const time = new Date().toLocaleString(undefined, {hour: "numeric", minute: "numeric"})
+        const finalText = time;
+        speak(finalText);
     }
 
     else if(message.includes('date')) {
@@ -111,7 +115,7 @@ function takeCommand(message){
      
      else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "This is what i found on internet regarding " + message;
+        const finalText = "This is what i found on internet regarding " + message.replace("what is","") || message.replace("who is","") || message.replace("what are","");
 	    speak(finalText);
   
     }
