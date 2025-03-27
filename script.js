@@ -74,27 +74,31 @@ function takeCommand(message){
      // Opening Apps 
      
      else if(message.includes('camera')) {
-        window.open('Camera://')
+        window.open("camera://")
         const finalText = "Opening Camera";
         speak(finalText);
     }
     else if(message.includes('calculator')) {
-        window.open('Calculator://')
+        window.open("calculator://")
         const finalText = "Opening Calculator";
         speak(finalText);
     }
     else if(message.includes('contacts')) {
-        window.open('contacts://')
+        window.open("contacts://")
         const finalText = "Opening Contacts";
+        speak(finalText);
+    }
+    else if(message.includes('watsapp')) {
+        window.open("watsapp://")
+        const finalText = "Opening Watsapp";
         speak(finalText);
     }
     
     // Date and Time 
       
     else if(message.includes('time')) {
-        const time = new Date().toLocaleString(undefined, {hour: "numeric", minute: "numeric"})
-        const finalText = time;
-        speak(finalText);
+        let time = new Time().toLocaleString(undefined,{hours:"numeric", minutes:"numberic"})
+        speak(time);
     }
 
     else if(message.includes('date')) {
