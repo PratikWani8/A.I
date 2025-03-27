@@ -32,42 +32,65 @@ btn.addEventListener('click', ()=>{
 })
 
 function takeCommand(message){
+ 
+   // Greetings 
+   
     if(message.includes('hey') || message.includes('hello')){
-        speak("Hello Sir, How May I Help You?");
+        speak("Hello Sir, How can I Help You?");
     }
-    else if(message.includes('pratik vani')){
-        speak("pratik wani is my creator");
+    else if(message.includes('good morning')){
+        speak("good morning sir ");
         }
+    else if(message.includes('good afternoon')){
+        speak("good afternoon sir ");
+        } 
+    else if(message.includes('good evening')){
+        speak("good evening sir ");
+        } 
+     
+     // Openings Websites 
+       
     else if(message.includes("open google")){
         window.open("https://google.com", "_blank");
-        speak("Opening Google...")
+        speak("Opening Google")
     }
     else if(message.includes("open youtube")){
         window.open("https://youtube.com", "_blank");
-        speak("Opening Youtube...")
+        speak("Opening Youtube")
     }
     else if(message.includes("open instagram")){
         window.open("https://instagram.com", "_blank");
-        speak("Opening Instagram...")
+        speak("Opening Instagram")
         }
     else if(message.includes("open facebook")){
         window.open("https://facebook.com", "_blank");
-        speak("Opening Facebook...")
+        speak("Opening Facebook")
     }
-
-    else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
-        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "This is what i found on internet regarding " + message;
-	    speak(finalText);
-  
+    else if(message.includes("open tweeter")){
+        window.open("https://tweeter.com", "_blank");
+        speak("Opening Tweeter")
     }
-
-    else if(message.includes('wikipedia')) {
-        window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
-        const finalText = "This is what i found on wikipedia regarding " + message;
+ 
+     // Opening Apps 
+     
+     else if(message.includes('camera')) {
+        window.open('Camera://')
+        const finalText = "Opening Camera";
         speak(finalText);
     }
-
+    else if(message.includes('calculator')) {
+        window.open('Calculator://')
+        const finalText = "Opening Calculator";
+        speak(finalText);
+    }
+    else if(message.includes('contacts')) {
+        window.open('contacts://')
+        const finalText = "Opening Contacts";
+        speak(finalText);
+    }
+    
+    // Date and Time 
+      
     else if(message.includes('time')) {
         const time = new Date().toLocaleString(undefined, {hour: "numeric", minute: "numeric"})
         const finalText = time;
@@ -80,15 +103,23 @@ function takeCommand(message){
         speak(finalText);
     }
 
-    else if(message.includes('calculator')) {
-        window.open('Calculator://')
-        const finalText = "Opening Calculator";
-        speak(finalText);
+     // Searching other informations
+     
+     else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
+        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
+        const finalText = "This is what i found on internet regarding " + message;
+	    speak(finalText);
+  
     }
 
+    else if(message.includes('wikipedia')) {
+        window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
+        const finalText = "This is what i found on wikipedia regarding " + message;
+        speak(finalText);
+    }
+     
     else {
-        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "I found some information for " + message + " on google";
+        const finalText = "Sorry, I have no Information";
         speak(finalText);
     }
 }
