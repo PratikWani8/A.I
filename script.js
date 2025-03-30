@@ -103,6 +103,15 @@ function takeCommand(message){
         const finalText = date;
         speak(finalText);
     }
+    
+     // Self Information 
+    
+    else if(message.includes("who are you?")){
+        speak("I am sira, your virtual assistant developed by protronix.");
+    }
+    else if(message.includes("Who is Pratik Vani")){
+        speak("Pratik Vani is an Indian Entrepreneur. He is the founder and ceo of Protronix.");
+    }
 
      // Searching other informations
      
@@ -117,15 +126,6 @@ function takeCommand(message){
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
         const finalText = "This is what i found on wikipedia regarding " + message.replace("search on wikipedia","");
         speak(finalText);
-    }
-    
-    // Self Information 
-    
-    else if(message.includes('who are you?')){
-        speak("I am sira, your virtual assistant developed by protronix.");
-    }
-    else if(message.includes('pratik vani')){
-        speak("Pratik Vani is an Indian Entrepreneur. He is the founder and ceo of Protronix.");
     }
      
      // If information not found 
