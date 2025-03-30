@@ -38,13 +38,13 @@ function takeCommand(message){
         speak("Hello Sir, How can I Help You?");
     }
     else if(message.includes('good morning')){
-        speak("good morning sir ");
+        speak("good morning sir, How can I Help You?");
         }
     else if(message.includes('good afternoon')){
-        speak("good afternoon sir ");
+        speak("good afternoon sir, How can I Help You?");
         } 
     else if(message.includes('good evening')){
-        speak("good evening sir ");
+        speak("good evening sir, How can I Help You?");
         } 
      
      // Openings Websites 
@@ -65,38 +65,31 @@ function takeCommand(message){
         window.open("https://facebook.com", "_blank");
         speak("Opening Facebook")
     }
-    else if(message.includes("open tweeter")){
+    else if(message.includes("open twitter")){
         window.open("https://twitter.com", "_blank");
-        speak("Opening Tweeter")
+        speak("Opening Twitter")
     }
     else if(message.includes("open amazon")){
         window.open("https://amazon.com", "_blank");
         speak("Opening Amazon")
     }
- 
-     // Opening Apps 
-     
-     else if(message.includes('camera')) {
-        window.open("camera://")
-        const finalText = "Opening Camera";
-        speak(finalText);
+    else if(message.includes("open linkedin")){
+        window.open("https://in.linkedin.com", "_blank");
+        speak("Opening Linkedin")
     }
-    else if(message.includes('calculator')) {
-        window.open("calculator://")
-        const finalText = "Opening Calculator";
-        speak(finalText);
+    else if(message.includes("open spotify")){
+        window.open("https://open.spotify.com", "_blank");
+        speak("Opening Spotify")
     }
-    else if(message.includes('contacts')) {
-        window.open("contacts://")
-        const finalText = "Opening Contacts";
-        speak(finalText);
+    else if(message.includes("open whatsapp")){
+        window.open("https://wa.me", "_blank");
+        speak("Opening WhatsApp")
     }
-    else if(message.includes('watsapp')) {
-        window.open("watsapp://")
-        const finalText = "Opening Watsapp";
-        speak(finalText);
+    else if(message.includes("open snapchat")){
+        window.open("https://www.snapchat.com", "_blank");
+        speak("Opening Snapchat")
     }
-    
+   
     // Date and Time 
       
     else if(message.includes('time')) {
@@ -113,7 +106,7 @@ function takeCommand(message){
 
      // Searching other informations
      
-     else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
+     else if(message.includes('what is') || message.includes('who is') || message.includes('what are') || message.includes('which is') ||  message.includes('search')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is what i found on internet regarding " + message.replace("what is","") || message.replace("who is","") || message.replace("what are","");
 	    speak(finalText);
@@ -122,12 +115,23 @@ function takeCommand(message){
 
     else if(message.includes('wikipedia')) {
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
-        const finalText = "This is what i found on wikipedia regarding " + message;
+        const finalText = "This is what i found on wikipedia regarding " + message.replace("search on wikipedia","");
         speak(finalText);
     }
+    
+    // Self Information 
+    
+    else if(message.includes('who are you?')){
+        speak("I am sira, your virtual assistant developed by protronix.");
+    }
+    else if(message.includes('Who is pratik vani')){
+        speak("Pratik Vani is an Indian Entrepreneur. He is the founder and ceo of Protronix.");
+    }
+     
+     // If information not found 
      
     else {
-        const finalText = "Sorry, I have no Information";
+        const finalText = "Sorry, I have no Information.";
         speak(finalText);
     }
 }
