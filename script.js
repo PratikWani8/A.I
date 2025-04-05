@@ -110,7 +110,8 @@ function takeCommand(message){
         speak("I am sira, your virtual assistant developed by protronix.");
     }
     else if(message.includes("Pratik Vani")){
-        speak("Pratik Vani is an Indian Entrepreneur. He is the founder and ceo of Protronix.");
+        const finalText = "Pratik Vani is an Indian Entrepreneur. He is the founder and ceo of Protronix.";
+	speak(finalText);    
     }
 
      // Searching other informations
